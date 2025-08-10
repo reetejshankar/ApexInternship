@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(90deg, #000, #333);
+    height: 90px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-bar h1 {
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.nav-bar h3 {
+    color: #ccc;
+    font-weight: 400;
+}
+
+.nav-bar .name {
+    margin-left: 50px;
+}
+
+/* Main Container */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 120px 40px 60px;
+    height: 605px;
+    /* Top padding for fixed header */
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: #2a2a2a;
+}
+
+/* Cards (Quiz & Joke) */
+.main .quizz,
+.main .joke-api {
+    background: linear-gradient(145deg, #222, #333);
+    border: 1px solid #444;
+    width: 350px;
+    min-height: 250px;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 55px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main .quizz:hover,
+.main .joke-api:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
+}
+
+.main .quizz h2,
+.main .joke-api h2 {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.main .quizz p,
+.main .joke-api p {
+    color: #ddd;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.main .quizz button,
+.main .joke-api button {
+    background: linear-gradient(135deg, #fff, #ddd);
+    color: black;
+    font-weight: 600;
+    margin-top: 30px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.main .quizz button:hover,
+.main .joke-api button:hover {
+    background: linear-gradient(135deg, #eee, #bbb);
+    transform: scale(1.05);
+}
+
+.quizz button a,
+.joke-api button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: row;
+        margin-top: -25px;
+        height: 661px;
+    }
+
+    .main .quizz,
+    .main .joke-api {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .main .joke-api {
+        margin-top: -20px;
+        height: 10px;
+    }
+
+    .nav-bar h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer .inner-footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar h1 {
+        font-size: 1.2rem;
+    }
+
+    .main .quizz,
+    .main .joke-api {
+        padding: 15px;
+    }
+}
