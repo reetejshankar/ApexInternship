@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./quizz.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="heading">
+                <h1><a href="../index.html">TASK-3 APEX PLANET</a></h1>
+            </div>
+            <div class="name">
+                <h3>QUIZZ</h3>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="quiz-container">
+            <h1>Quiz Time 📝</h1>
+
+            <div class="question">
+                <p id="question-text">Loading...</p>
+                <div class="options" id="options-container">
+                    <!-- Options will be loaded dynamically -->
+                </div>
+            </div>
+
+            <button class="btn" onclick="submitAnswer()">Submit</button>
+            <div class="result" id="result"></div>
+        </div>
+    </main>
+
+    <script src="./quizz.js"></script>
+</body>
+
+</html>
