@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Planet - Task 4 Portfolio + Apps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav container">
+            <div class="brand">reetej.dev</div>
+            <div class="links">
+                <a href="#about" class="active">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#todo">To-Do App</a>
+                <a href="#shop">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About / Hero -->
+    <section id="about" class="container">
+        <div class="hero">
+            <div>
+                <span class="pill">Hi, I'm Reetej Shankar • CSE</span>
+                <h1>Building clean UIs and useful web apps with HTML, CSS & JS.</h1>
+                <p>I'm a 1st-year BTech CSE student (JECRC University) learning full-stack with Java. I enjoy turning
+                    ideas into neat, responsive interfaces—focusing on accessibility, performance, and maintainable
+                    code.</p>
+                <div class="cta">
+                    <a class="btn primary" href="#projects">View Projects</a>
+                    <a class="btn ghost" href="#contact">Get in Touch</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3 style="margin-top:0">Quick Skills</h3>
+                <div class="grid cols-2">
+                    <div>
+                        <p><strong>Frontend</strong><br />HTML5, CSS3, Flex/Grid, Responsive, JS (ES6)</p>
+                    </div>
+                    <div>
+                        <p><strong>Tools</strong><br />Git/GitHub, VS Code, Chrome DevTools</p>
+                    </div>
+                    <div>
+                        <p><strong>Interests</strong><br />Data Science, DSA (Java), Spring Boot</p>
+                    </div>
+                    <div>
+                        <p><strong>Soft Skills</strong><br />Problem Solving, Communication, Ownership</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects overview (links to the two mini‑apps below) -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Two functional mini-apps built for Apex Planet Task-4. Fully responsive and written in vanilla
+                HTML/CSS/JS.</p>
+            <div class="grid cols-3">
+                <article class="card project">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+                        alt="To-Do App" />
+                    <h3>To-Do / Notes with LocalStorage</h3>
+                    <p>CRUD operations with persistent storage, inline editing, status toggle, and filtering.</p>
+                    <a class="btn" href="#todo">Open App</a>
+                </article>
+                <article class="card project">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+                        alt="Product Listing" />
+                    <h3>Product Listing with Filters & Sorting</h3>
+                    <p>Browse items by category, search by name, and sort by price or rating.</p>
+                    <a class="btn" href="#shop">Open Shop</a>
+                </article>
+                <article class="card project">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+                        alt="Portfolio" />
+                    <h3>This Portfolio</h3>
+                    <p>Multi-section, mobile-first design with sticky nav and smooth scrolling.</p>
+                    <a class="btn" href="#about">Back to Top</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- To‑Do / Notes App -->
+    <section id="todo">
+        <div class="container">
+            <h2>To-Do / Notes App (LocalStorage)</h2>
+            <p>Type a task or note, set a tag, and click “Add”. Everything is saved locally—refresh and your items will
+                still be here.</p>
+
+            <div class="card">
+                <div class="toolbar">
+                    <input id="todoTitle" placeholder="Add a task or note…" />
+                    <select id="todoTag">
+                        <option value="General">General</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                    <button class="btn primary" id="addTodo">Add</button>
+                    <input id="todoSearch" placeholder="Search…" />
+                    <select id="todoFilter">
+                        <option value="all">All</option>
+                        <option value="open">Open</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+                <div class="list" id="todoList"></div>
+                <div class="empty" id="todoEmpty" hidden>No items yet. Add your first task ✨</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listing Page -->
+    <section id="shop">
+        <div class="container">
+            <h2>Product Listing - Filter & Sort</h2>
+            <p>Demo catalog with client-side filtering (category), search, and sorting (price/rating).</p>
+
+            <div class="card">
+                <div class="toolbar">
+                    <select id="catFilter">
+                        <option value="all">All Categories</option>
+                    </select>
+                    <input id="searchBox" placeholder="Search products…" />
+                    <select id="sortBy">
+                        <option value="default">Sort By</option>
+                        <option value="price-asc">Price: Low → High</option>
+                        <option value="price-desc">Price: High → Low</option>
+                        <option value="rating-desc">Rating: High → Low</option>
+                        <option value="rating-asc">Rating: Low → High</option>
+                    </select>
+                </div>
+                <div class="products" id="productGrid"></div>
+                <div class="empty" id="productEmpty" hidden>No products match your filters.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Have a project or just want to say hi? Drop a message.</p>
+            <form class="grid cols-2 card"
+                onsubmit="event.preventDefault(); alert('Thanks! I\'ll get back to you soon.'); this.reset();">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" required placeholder="Your name" />
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required placeholder="you@example.com" />
+                </div>
+                <div class="field" style="grid-column:1/-1">
+                    <label for="msg">Message</label>
+                    <textarea id="msg" rows="5" required placeholder="Write your message…"></textarea>
+                </div>
+                <button class="btn primary" style="grid-column:1/-1;justify-self:start">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        © <span id="year"></span> reetej.dev • Built with HTML, CSS & JavaScript
+    </footer>
+
+   <script src="app.js"></script>
+</body>
+
+</html>
